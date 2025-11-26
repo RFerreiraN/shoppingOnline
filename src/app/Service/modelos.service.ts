@@ -53,7 +53,5 @@ export class ModelosService {
     getProductDetail(id:any):Observable <any>{
         var headers = new HttpHeaders().set('Content-Type' , 'application/json');
         return this._http.get(this.url + '/products/' + id , {headers : headers})
-    }
-
-  
+    }  
 }
