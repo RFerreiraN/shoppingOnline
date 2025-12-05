@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Modelos } from '../../Model/modelo';
-import { HttpClient } from '@angular/common/http';
 import { ModelosService } from '../Service/modelos.service';
-import { ActivatedRoute, Params } from '@angular/router';
 import { CartService } from '../Service/cart.service';
+import { Router } from '@angular/router';
 
 
 
@@ -26,7 +25,7 @@ export class ProductosComponent implements OnInit{
   
   constructor(
     private _modelosServices: ModelosService,
-    private _route : ActivatedRoute,
+    private _router: Router,
     private cartService : CartService,
   ){
       this.productos = [];
@@ -40,31 +39,11 @@ export class ProductosComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.getProductos()
-    // this.getJewerly()
-    // this.getElectronic()
-    // this.getMenClothing()
-    // this.getWomenClothing()
-    // this.getCategories()
-    
-  }
-
-
- getProductos(){ 
-  // this.cartService.getAllProducts().subscribe( data => {
-  //   this.productos = data
-    
-  // })
-  //  this._modelosServices.getProductos().subscribe({
-  //   next: (response) => this.productos = response,
-  //   error: (err) => console.log(<any>err),
-   
-  //  }) 
-
-  this._modelosServices.getProductos().subscribe( productos => {
+    this._modelosServices.getProductos().subscribe( productos => {
     this.productos = productos;
   })
- }
+  }
+
 
  getJewerly(){
   this._modelosServices.getJewerly().subscribe({
@@ -101,6 +80,11 @@ export class ProductosComponent implements OnInit{
     this.cartService.addProductCart(producto); 
     this.cartService.addNumbersItem(number);
  }
+
+ detailProduct(id : number){
+    this._router.navigate(['productos/', id])
+ }
+
  
 
 

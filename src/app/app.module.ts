@@ -22,6 +22,7 @@ import { TotalComponent } from './total/total.component';
 import { PaymentComponent } from './payment/payment.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SessionComponent } from './session/session.component';
+import { ProductosDatalleComponent } from './productos-datalle/productos-datalle.component';
 
 
 
@@ -43,6 +44,7 @@ import { SessionComponent } from './session/session.component';
     TotalComponent,
     PaymentComponent,
     SessionComponent,
+    ProductosDatalleComponent,
    
   ],
   imports: [

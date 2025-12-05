@@ -1,0 +1,41 @@
+<div class="card" style="width: 18rem;">
+  <img 
+      [src]="productDetail?.image" 
+      [alt]="productDetail?.title"
+      class="img-fluid"
+      style="height: 180px; object-fit: contain;"
+    >
+
+  <div class="card-body">
+    <h5 class="card-title">{{ productDetail?.title }}</h5>
+
+    <!-- Descripción limitada o completa -->
+    <p class="card-text">
+  {{ 
+    !showFull 
+      ? (productDetail?.description | slice:0:100) + '...' 
+      : productDetail?.description 
+  }}
+</p>
+
+<button 
+  *ngIf="productDetail?.description && productDetail!.description.length > 100"
+  class="addCart"
+  (click)="toggleDescription()"
+>
+  {{ showFull ? 'Less..' : 'More...' }}
+</button>
+
+    <div class="d-flex justify-content-between addCart mt-3">
+      <button 
+        [disabled]="!productDetail" 
+        (click)="addCart(productDetail!, productDetail!.id)"
+      >
+        Add Cart
+      </button>
+
+      <button (click)="goBack()">⟵ Back</button>
+    </div>
+  </div>
+</div>
+

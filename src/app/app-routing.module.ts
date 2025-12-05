@@ -11,6 +11,7 @@ import { JewerlyComponent } from './jewerly/jewerly.component';
 import { MenClothingComponent } from './men-clothing/men-clothing.component';
 import { WomenClothingComponent } from './women-clothing/women-clothing.component';
 import { SessionComponent } from './session/session.component';
+import { ProductosDatalleComponent } from './productos-datalle/productos-datalle.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'productos', component: ProductosComponent},
+  {path: 'productos/:productoId', component: ProductosDatalleComponent},
   {path: 'productos/category/jewerly' , component: JewerlyComponent},
   {path: 'productos/category/electronics' , component: ElectronicsComponent},
   {path: 'productos/category/men-clothing' , component: MenClothingComponent},

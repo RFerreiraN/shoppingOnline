@@ -27,9 +27,9 @@
                         <div class="price">
                             <h5 class="precio">{{producto.price | currency : 'EUR'}} </h5>
                         </div>
-                        <div class="addCart">
+                        <div class="d-flex justify-content-between addCart">
                             <button (click)="addCart(producto , 1)">Add to Cart!</button>
-                            
+                            <button (click)="detailProduct(producto.id)">Details</button>
                         </div>
                 </li>
             </div>  

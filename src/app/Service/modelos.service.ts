@@ -10,16 +10,11 @@ import { Modelos } from "../../Model/modelo";
 })
 
 export class ModelosService {
-    public url : string;
+    public url : string = 'https://fakestoreapi.com';
 
     constructor(
         private _http: HttpClient
-    ){
-        this.url = 'https://fakestoreapi.com';
-        
-    }
-
-  
+    ){}
 
     getProductos():Observable<Modelos[]>{
        return this._http.get<Modelos[]>(this.url + '/products')
@@ -50,8 +45,7 @@ export class ModelosService {
         return this._http.get(this.url + '/products/category/jewelery', { headers : headers});
     }
 
-    getProductDetail(id:any):Observable <any>{
-        var headers = new HttpHeaders().set('Content-Type' , 'application/json');
-        return this._http.get(this.url + '/products/' + id , {headers : headers})
+    getProductDetail(id: number | string ):Observable <Modelos>{
+    return this._http.get<Modelos>(`${this.url}/products/${id}`)
     }  
 }
