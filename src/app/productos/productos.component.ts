@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css',
-  providers: [ModelosService]
+  
 })
 export class ProductosComponent implements OnInit{
     public productos: Modelos [];
