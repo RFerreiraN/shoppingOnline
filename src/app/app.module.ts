@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { HttpClientModule, HttpClient, withFetch } from '@angular/common/http';
 import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MatBadgeModule } from '@angular/material/badge';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,8 +51,7 @@ import { ProductosDatalleComponent } from './productos-datalle/productos-datalle
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatBadgeModule,
- 
+  
   ],
   providers: [
     provideClientHydration(),
