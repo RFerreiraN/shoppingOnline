@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'yanone';
-    src: url('/src/assets/Fonts/yanone.ttf');
+    src: url('../FONTS/yanone.ttf');
 }
 @font-face {
     font-family: 'titilium';
-    src: url('../fonts/titilium.ttf');
+    src: url('../FONTS/titilium.ttf');
 }
 @font-face {
     font-family: 'finger';
-    src: url('../fonts/finger.ttf');
+    src: url('../FONTS/finger.ttf');
 }
 
 /* estilos generales */
