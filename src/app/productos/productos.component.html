@@ -1,7 +1,5 @@
-
-
 <section class="productos-flex">
-    
+
     <div class="navmenu">
         <ul>
             <li><a routerLink="/productos/category/jewerly">Jewerly</a></li>
@@ -9,33 +7,32 @@
             <li><a routerLink="/productos/category/men-clothing">Men's Clothing</a></li>
             <li><a routerLink="/productos/category/women-clothing">Women's Clothing</a></li>
         </ul>
-    
+
     </div>
 
     <div id="products">
         <ul>
             <div class="plantilla">
-                     <li *ngFor="let producto of productos" >
-                        <div class="title">
-                            <h6 class="titulo">{{producto.title}}</h6>
-                        </div>
-                        <div >
-                            <h6 class="category">{{producto.category}}</h6>
-                        </div>
-                        <div class="image" [ngStyle]="{'backgroundImage' : 'url('+producto.image+')'}">
-                        </div>
-                        <div class="price">
-                            <h5 class="precio">{{producto.price | currency : 'EUR'}} </h5>
-                        </div>
-                        <div class="d-flex justify-content-between addCart">
-                            <button (click)="addCart(producto , 1)">Add to Cart!</button>
-                            <button (click)="detailProduct(producto.id)">Details</button>
-                        </div>
+                <li *ngFor="let producto of productos">
+                    <div class="title">
+                        <h6 class="titulo">{{producto.title}}</h6>
+                    </div>
+                    <div>
+                        <h6 class="category">{{producto.category}}</h6>
+                    </div>
+                    <div class="image" [ngStyle]="{'backgroundImage' : 'url('+producto.image+')'}">
+                    </div>
+                    <div class="price">
+                        <h5 class="precio">{{producto.price | currency : 'EUR'}} </h5>
+                    </div>
+                    <div class="d-flex justify-content-between addCart">
+                        <button (click)="addCart(producto , 1)">Add to Cart!</button>
+                        <button (click)="detailProduct(producto.id)">Details</button>
+                    </div>
                 </li>
-            </div>  
-        </ul>    
-    </div> 
+            </div>
+        </ul>
+    </div>
 
- 
+
 </section>
-
