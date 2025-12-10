@@ -1,23 +1,30 @@
 <header id="flex-container">
 
-    <nav class="logo">
-        <ul>
-          <li><a routerLink="/inicio" routerlinkActite="activate" class="home"><img src="assets/img/9Sbxdg-LogoMakr.png" alt="logo"></a></li> 
-        </ul>
-      <!-- Shopping Online <i class="fa-solid fa-house"></i> -->
-    </nav> 
+  <nav class="logo">
+    <ul>
+      <li><a routerLink="/inicio" routerLinkActive="active" class="home"><img src="assets/img/9Sbxdg-LogoMakr.png"
+            alt="logo"></a></li>
+    </ul>
+  </nav>
 
-    <nav class="mainmenu">
-      <ul>
-        
-          <li><a routerLink="/inicio" routerLinkActive="active">Home</a></li>
-          <li><a routerLink="/productos" routerLinkActive="active">Products</a></li>
-          <li><a routerLink="/area-personal" routerLinkActive="active">Login</a></li>
-          <li><a routerLink="/contacto" routerLinkActive="active">Contact</a></li>
-          <li><a routerLink="/cesta" routerLinkActive="active" class="cesta">Cart <i class="fa-solid fa-cart-shopping"><span class="position-absolute badge rounded-pill bg-danger" style="top: 28px; right: 47px;">{{cartItems}}</span></i></a></li>
-            
-      </ul>
-    </nav>
+  <nav class="mainmenu">
+    <ul>
+
+      <li><a routerLink="/inicio" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/productos" routerLinkActive="active">Products</a></li>
+      <li><a routerLink="/area-personal" routerLinkActive="active">Login</a></li>
+      <li><a routerLink="/contacto" routerLinkActive="active">Contact</a></li>
+      <li>
+        <a routerLink="/cesta" routerLinkActive="active" class="cesta">
+          Cart
+          <i class="fa-solid fa-cart-shopping">
+            <span class="badge rounded-pill bg-danger">{{cartItems}}</span>
+          </i>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
 
 </header>
 
@@ -27,44 +34,40 @@
 </section>
 
 <footer>
-  
-    <div class="block-1">
-      <ul>
-        <li><a href="#">Legal Warning</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Cookies Policy</a></li>
-        <li><a href="#">Quality Policy</a></li> 
-      </ul>
-   </div>
-  
-   <div class="block-2">
-     <a routerLink="/inicio"><img src="assets/img/9TH6qF-LogoMakr.png" alt="logo" width="150px"></a>
-     <div class="links">
+
+  <div class="block-1">
+    <ul>
+      <li><a href="#">Legal Warning</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Cookies Policy</a></li>
+      <li><a href="#">Quality Policy</a></li>
+    </ul>
+  </div>
+
+  <div class="block-2">
+    <a routerLink="/inicio"><img src="assets/img/9TH6qF-LogoMakr.png" alt="logo" width="150px"></a>
+    <div class="links">
       <a href="#"><i class="fa-brands fa-facebook"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
       <a href="#"><i class="fa-brands fa-youtube"></i></a>
       <a href="#"><i class="fa-brands fa-pinterest"></i></a>
       <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-     </div>
-   </div>
+    </div>
+  </div>
 
-  
-  
-   <div class="block-1">
+
+
+  <div class="block-1">
     <ul>
       <li><a href="#">Shopping Store</a></li>
       <li><a href="#">Blog</a></li>
       <li> <a routerLink="/contacto">Contact</a></li>
-      <li><a href="#">FAQs</a></li> 
+      <li><a href="#">FAQs</a></li>
     </ul>
-    
-   </div>
 
- 
+  </div>
 
 </footer>
 <div class="block-4">
-    <span>&COPY;R.Ferreira</span>
- </div>
-
-
+  <span>&COPY;R.Ferreira</span>
+</div>
