@@ -57,12 +57,15 @@ li {
 header {
     display: flex;
     position: fixed;
-    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 120px;
     padding: 20px;
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid #ccc;
     overflow: hidden;
+    z-index: 1000;
 }
 
 

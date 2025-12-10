@@ -3,6 +3,7 @@ import { Modelos } from '../../Model/modelo';
 import { ModelosService } from '../Service/modelos.service';
 import { Router } from '@angular/router';
 import { CartService } from '../Service/cart.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-electronics',
@@ -10,36 +11,41 @@ import { CartService } from '../Service/cart.service';
   styleUrl: './electronics.component.css',
   providers: [ModelosService]
 })
-export class ElectronicsComponent implements OnInit{
- 
-  public electronics: Modelos []
+export class ElectronicsComponent implements OnInit {
 
-    constructor(
-      private _modelosService : ModelosService,
-      private router : Router,
-      private cartService : CartService
-    ){
-      this.electronics = []
-    }
+  public electronics: Modelos[]
 
-    ngOnInit(): void {
-      this.getElectronic()
-    }
+  constructor(
+    private _modelosService: ModelosService,
+    private _router: Router,
+    private cartService: CartService,
+    private location: Location
+  ) {
+    this.electronics = []
+  }
 
-    getElectronic(){
-      this._modelosService.getElectronic().subscribe({
-        next : (response) => this.electronics = (response),
-        error: (err) => console.log(<any>err),
-        complete : () => console.log(this.electronics)
-      })
-    }
+  ngOnInit(): void {
+    this.getElectronic()
+  }
 
-    addCart(electronics : Modelos, number : number){
-      this.cartService.addProductCart(electronics);
-      this.cartService.addNumbersItem(number);
-    }
+  getElectronic() {
+    this._modelosService.getElectronic().subscribe({
+      next: (response) => this.electronics = (response),
+      error: (err) => console.log(<any>err),
+      complete: () => console.log(this.electronics)
+    })
+  }
 
-    backToProducts(){
-      this.router.navigate(['/productos'])
-    }
+  addCart(electronics: Modelos, number: number) {
+    this.cartService.addProductCart(electronics);
+    this.cartService.addNumbersItem(number);
+  }
+
+  detailProduct(id: number) {
+    this._router.navigate(['productos/', id])
+  }
+
+  backToProducts() {
+    this._router.navigate(['/productos'])
+  }
 }

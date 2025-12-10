@@ -11,28 +11,33 @@
     <div class="jewerly">
         <ul>
             <div class="plantilla">
-                     <li *ngFor="let producto of jewerlys" >
-                        <div class="title">
-                            <h6 class="titulo">{{producto.title}}</h6>
-                        </div>
-                        <div >
-                            <h6 class="category">{{producto.category}}</h6>
-                        </div>
-                        <div class="image" [ngStyle]="{'backgroundImage' : 'url('+producto.image+')'}">
-                            <!-- <img src="{{producto.image}}" width="50px"> -->
-                        </div>
-                        <div class="price">
-                            <h5 class="precio">{{producto.price | currency : 'EUR'}} </h5>
-                        </div>
-                        <div class="addCart">
-                            <button (click)="addCart(producto, 1)">BUY IT!</button>
-                        </div>
-                    </li>
-            </div>  
-        </ul>    
-      </div>
+                <li *ngFor="let producto of jewerlys">
+                    <div class="title">
+                        <h6 class="titulo">{{producto.title}}</h6>
+                    </div>
+                    <div>
+                        <h6 class="category">{{producto.category}}</h6>
+                    </div>
+                    <div class="image" [ngStyle]="{'backgroundImage' : 'url('+producto.image+')'}">
 
-      <div class="backProducts">
-        <button (click)="backToProducts()"><< BACK</button>
-      </div>
+                    </div>
+                    <div class="price">
+                        <h5 class="precio">{{producto.price | currency : 'EUR'}} </h5>
+                    </div>
+                    <div class="d-flex justify-content-between addCart mt-3">
+                        <button  (click)="addCart(producto, 1)">
+                            Add Cart
+                        </button>
+
+                        <button (click)="detailProduct(producto.id)">Details</button>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="backProducts">
+        <button (click)="backToProducts()">
+            << BACK</button>
+    </div>
 </section>

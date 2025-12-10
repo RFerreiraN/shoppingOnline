@@ -39,6 +39,7 @@ export class ProductosDatalleComponent implements OnInit {
     this.showFull = !this.showFull;
   }
 
+
   goBack() {
     this.location.back()
   }

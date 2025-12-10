@@ -10,34 +10,38 @@ import { CartService } from '../Service/cart.service';
   styleUrl: './women-clothing.component.css',
   providers: [ModelosService]
 })
-export class WomenClothingComponent implements OnInit{
+export class WomenClothingComponent implements OnInit {
 
-    public womenClothing : Modelos[] = []
+  public womenClothing: Modelos[] = []
 
-    constructor(
-      private _modelosService : ModelosService,
-      private router : Router,
-      private cartService : CartService,
-    ){}
+  constructor(
+    private _modelosService: ModelosService,
+    private _router: Router,
+    private cartService: CartService,
+  ) { }
 
-    ngOnInit(): void {
-      this.getWomenClothing()
-    }
+  ngOnInit(): void {
+    this.getWomenClothing()
+  }
 
-    getWomenClothing(){
-      this._modelosService.getWomenClothing().subscribe({
-        next : (response) => this.womenClothing = response,
-        error : (err) => console.log(<any>err),
-        complete : () => console.log(this.womenClothing)
-      })
-    }
+  getWomenClothing() {
+    this._modelosService.getWomenClothing().subscribe({
+      next: (response) => this.womenClothing = response,
+      error: (err) => console.log(<any>err),
+      complete: () => console.log(this.womenClothing)
+    })
+  }
 
-    addCart(womenClothing : Modelos , number : number){
-      this.cartService.addProductCart(womenClothing);
-      this.cartService.addNumbersItem(number)
-    }
+  addCart(womenClothing: Modelos, number: number) {
+    this.cartService.addProductCart(womenClothing);
+    this.cartService.addNumbersItem(number)
+  }
 
-    backToProducts(){
-      this.router.navigate(['/productos'])
-    }
+  detailProduct(id: number) {
+    this._router.navigate(['productos/', id])
+  }
+
+  backToProducts() {
+    this._router.navigate(['/productos'])
+  }
 }

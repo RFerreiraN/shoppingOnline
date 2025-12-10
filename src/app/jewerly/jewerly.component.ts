@@ -16,7 +16,7 @@ public jewerlys : Modelos [] = []
   constructor(
     private _modelosService : ModelosService,
     private cartService : CartService,
-    private router : Router
+    private _router : Router
 
   ){
 
@@ -42,7 +42,11 @@ public jewerlys : Modelos [] = []
     this.cartService.addNumbersItem(number)
   }
 
+  detailProduct(id: number) {
+    this._router.navigate(['productos/', id])
+  }
+
   backToProducts(){
-    this.router.navigate(['/productos'])
+    this._router.navigate(['/productos'])
   }
 }
